@@ -1,6 +1,8 @@
+<body><a id="a"></a></body>
 <script>
   var url = window.location.toString()
   var getQuery = url.split('?')[1]
+  if (!getQuery) document.getElementById("a").innerHTML = "Pass the protocol URI to redirect to in the url parameter, like so:<br>https://notsuu.github.io/redir?url=calculator://
   var params = getQuery.split('&')
   if (params[0].startsWith('url=')) window.location.replace(params[0].substring(4))
 </script>
