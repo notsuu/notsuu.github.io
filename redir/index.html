@@ -1,0 +1,6 @@
+<script>
+  var url = window.location.pathname
+  var getQuery = url.split('?')[1]
+  var params = getQuery.split('&')
+  if (params[0].startsWith('url=')) window.location.replace(params[0].substring(4))
+</script>
