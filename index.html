@@ -1,2 +1,64 @@
-<link rel="stylesheet" href="stylesheet.css">
-<div class="center">Thank you for contacting the notsuu.github.io webserver. We value your time.<br>You will be transfered to our next available operator shortly.<br><br>Please do not close the tab.</div>
+<!DOCTYPE html>
+<head>
+	<title>notsu</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="idk">
+    <div class="page">
+      <h1 class="pageHeader">notsu</h1>
+      <a class="pageSubheader">unprofessional developer</a>
+      <div class="inner" data-header="notsu" data-subheader="unprofessional developer" data-linkOverride="main" id="home">
+        <a>
+        hi, im notsu - a russian developer doing the dumbest shit ever
+        <br><br>
+        i code stuff that fades away into obscurity in a few weeks (and serves as an inside joke. most of the times its inside joke stuff, actually)
+        <br><br>
+        why does this website even exist? good god i have no clue. its just a place for me to dump my stupid projects and also potentially start a blog with an all time reader peak of 1
+        <br><br>
+        (oh, yea. try dragging your mouse around.)
+        </a>
+      </div>
+      <div class="inner hidden" data-header="projects" data-subheader="code mess dump" id="projects">
+      </div>
+      <div class="inner hidden" data-header="blog" data-subheader="barren posting land" id="blog">
+        <a id="blogLoad">loading posts...</a>
+      </div>
+      <div class="inner hidden" data-header="socials and contact" data-subheader="communication is critical. that is not the case here, unfortunately." id="contact">
+        <a>
+        im available at:
+        <br><br>
+        discord - <a href="https://discord.com/users/398524149682667530">@notsudake</a>
+        <br>
+        telegram - <a href="https://t.me/notsudake">@notsudake</a>
+        <br>
+        steam - <a href="https://steamcommunity.com/id/notsudake">notsudake</a>
+        <br>
+        twitter (not really active) - <a href="https://twitter.com/clrSum">@clrSum</a>
+        <br>
+        reddit (even less active) <a href="https://reddit.com/u/ItsMintasik">u/ItsMintasik</a> (god why cant you change your username)
+        <br>
+        github - <a href="https://github.com/notsuu">notsuu</a>
+        <br><br>
+        if something's not listed here, it's probably not me (or it is me, its just that i forgot to add it here). i go by notsu and notsudake on most places.
+        </a>
+      </div>
+      <div class="inner hidden" data-header="debug" data-subheader="Призрак оперы смотреть онлайн бесплатно фильм (2004)" data-hidden="1" id="ebuchiy">
+        <a id="pos">position: 0, 0</a><br>
+        <a id="vel">velocity: 0, 0</a><br>
+        <a id="f">force: 0, 0</a><br>
+        <label>target velocity: <input type="number" id="tvelX" value="40"> <input type="number" id="tvelY" value="40"></label><br>
+        <label>force multiplier: <input type="number" id="fmul" value="10"></label><br>
+        <label>lerp point: <input type="number" id="lerp_t" min="0" max="1" value="0.02"></label><br>
+            </div>
+      <div class="links">
+        
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/blog.js"></script>
+</body>

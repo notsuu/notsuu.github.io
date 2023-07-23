@@ -1,10 +1,19 @@
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+body {
+  font-family: Verdana;
+  background-color: black
 }
 
-.fuckyougithubjustletmecommit {
-  font-size: 69420em 
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.theAnswer {
+  font-weight: bold;
+  color: red;
+  font-size: 15em
 }

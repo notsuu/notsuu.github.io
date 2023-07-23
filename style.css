@@ -1,0 +1,90 @@
+@font-face {
+	font-family: "JetBrains Mono";
+	src: local("JetBrains Mono"), url("./assets/jetlungsstereo.ttf") format("truetype");
+  }
+
+* {
+	color: white;
+	user-select: none;
+	font-family: "JetBrains Mono"
+}
+
+body {
+	background-color: #0f0f0f;
+	background-image: url('/assets/ebuchiy.png');
+	margin: 0;
+	padding: 0
+}
+
+input[type=number] {
+	background: #020202;
+	width: 65px;
+	border-radius: 4px;
+	border: 2px solid;
+}
+
+#blog {
+	transition: height 0.5s ease-out;
+}
+
+.idk {
+	width: 100%;
+	height: 100vh;
+	backdrop-filter: blur(10px);
+}
+
+.page {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 40%;
+}
+
+.inner {
+	border: white 3px solid;
+	border-radius: 3px;
+	margin-top: 10px;
+	padding: 10px;
+	height: 25vh;
+	overflow-y: auto;
+}
+
+.links {
+	margin-top: 10px;
+}
+
+.pageHeader {
+	margin-bottom: 3px;
+}
+
+.innerHeader {
+	font-weight: bold;
+	font-size: 1.4em;
+}
+
+.hidden {
+	display: none;
+}
+
+.postCounter {
+	color: #afafaf
+}
+
+#blog[data-postopen="1"] > * {
+	margin: 0px auto;
+}
+
+.link:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+a[href] {
+	text-decoration: none;
+}
+
+a[href]:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
