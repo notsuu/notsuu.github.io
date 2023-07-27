@@ -39,7 +39,7 @@ function displayPost(id) {
     $('.links')[0].innerHTML = `<a class='link' onclick='exitPost()'>go back</a>`
     let cachedPost = postCache.find(post => post.id == id)
     if (!cachedPost) {
-        $.ajax({url: `${postSource}/post?id=${id}`}).done(function(data) {
+        $.ajax({url: `${postSource}/post/${id}`}).done(function(data) {
             try {
                 postCache.push({id: id, content: data.content})
                 parsePost(data.content)
