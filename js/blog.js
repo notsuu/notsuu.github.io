@@ -67,6 +67,7 @@ function exitPost() {
 function parsePost(content) {
     try {
         blogIndex.innerHTML = marked.parse(content.join('\n'))
+        hljs.highlightAll()
     } catch (error) {
         console.error(error)
         blogIndex.innerHTML = `<b>failed to display post!</b><br>check developer console for details`
