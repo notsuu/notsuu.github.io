@@ -104,8 +104,3 @@ code.hljs, #blog > p > img {
 	cursor: pointer;
 	text-decoration: underline;
 }
-
-a[href]:hover {
-	cursor: pointer;
-	text-decoration: underline;
-}
