@@ -38,10 +38,6 @@ code > * {
 	user-select: text;
 }
 
-#blog {
-	transition: height 0.5s ease-out;
-}
-
 #blog > *, #blog > p > * {
 	max-width: 100%;
 	user-select: text
@@ -76,6 +72,7 @@ code.hljs, #blog > p > img {
 	padding: 10px;
 	height: 25vh;
 	overflow-y: auto;
+	transition: height 0.5s ease-out;
 }
 
 .links {

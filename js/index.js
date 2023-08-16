@@ -1,5 +1,3 @@
-let postSource = 'https://fouadcorp.cyclic.app'
-
 let drag = {
     tvel: [0, 0],
     vel: [0, 0],
@@ -25,11 +23,14 @@ marked.use({
     "headerIds": false
 })
 
-function nav(tab) {
+function nav(tab, noHashChange) {
     if (!tabs.find(t => t == tab)) return;
     for (let t in tabElements) { t == tab ? tabElements[t].classList.remove('hidden') : tabElements[t].classList.add('hidden') }
     $('.pageHeader')[0].innerHTML = tabElements[tab].dataset.header
     $('.pageSubheader')[0].innerHTML = tabElements[tab].dataset.subheader
+    console.log(tab)
+    document.title = `notsu ${tab != 'home' ? `| ${tabElements[tab].dataset.header}` : ''}`
+    if (!noHashChange) location.hash = `#${tab}`
 }
 
 window.addEventListener('mousemove', (event) => {
@@ -41,7 +42,7 @@ window.addEventListener('mousemove', (event) => {
 var lastUpdate = Date.now();
 var update = setInterval(tick, 0);
 
-function lerp (start, end, t) {
+function lerp(start, end, t) {
     return start * (1 - t) + end * t;
 }
 
@@ -63,3 +64,34 @@ function tick() {
     drag.fmul = $('#fmul')[0].value
     drag.lerp_t = $('#lerp_t')[0].value
 }
+
+function switchHash(newSection, oldSection) {
+    if (newSection == '') newSection = 'home'
+    nav(newSection)
+    if (oldSection.startsWith('post') && !newSection.startsWith('post')) {
+        exitPost(newSection)
+    }
+    if (newSection.startsWith("post")) {
+        let targetPost = newSection.substring(4)-1
+        //check if we already have blog post index, waiting for it to populate otherwise.
+        //this is probably really bad code
+        if (posts.length > 0) {
+            displayPost(targetPost)
+        } else {
+            let a = setInterval(() => {
+                console.log("IM CHECKING")
+                if (posts.length > 0) {displayPost(targetPost); clearInterval(a)}
+            }, 0)
+        }
+    }
+}
+
+switchHash(location.hash.substring(1), '')
+
+window.addEventListener("hashchange", (e) => {
+    let matches = [e.oldURL.match(/#.+/), e.newURL.match(/#.+/)]
+    switchHash(
+        matches[1] ? matches[1][0].substring(1) : '',
+        matches[0] ? matches[0][0].substring(1) : ''
+    )
+})
