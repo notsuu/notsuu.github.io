@@ -7,6 +7,9 @@ class Project {
 }
 
 let projects = [
+    new Project(`INFINITE JUDGEMENT`, `
+    slightly more than a game of russian roulette
+    `, `https://notsuu.github.io/infinite-judgement`),
     new Project(`...this website`, `
     is it really a project though? sure ive spent some hours working on it but in the end its... just an html box
     `, ``),
